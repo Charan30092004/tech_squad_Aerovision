@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<style>
+    label{
+        display: inline-block;
+        width: 150px;
+        text-align: right; 
+        color:rgba(0,0,0,1);     
+    }
+    .box{
+    text-align: center;
+    width: 350px;
+    background-color:rgba(239, 239, 243,0.6);
+    padding: 50px;
+    height: 480px;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    bottom: 8%;    
+}  
+    .button{
+        display: flex;
+        justify-content: space-between;
+    }
+    .b1{
+        position: relative;
+        width: 100px;
+        text-align: center;
+        padding: 8px 0;
+        margin: 20px 10px;
+        background-color: rgba(62, 17, 242, 0.3);
+    } 
+    body{
+        background-image: url("https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1580493890249-scaled.jpg");
+       
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: center center;
+        position: relative;
+        height: 100vh;     
+    }
+    button:hover{
+        background-color: rgba(3, 4, 11, 0.3);
+    }
+</style>
+<body> 
+    <form class="box">
+        <div>
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname" name="fname">        
+        </div>
+        <br>
+        <br>
+        <div>
+            <label for="lname">Last Name: </label>
+            <input type="text" id="lname" name="lname">
+        </div>    
+        <br>
+        <br>
+        <div >
+            <label for="dob" style="padding-right: 50px;">DOB: </label>
+            <input type="date" id="dob" name="dob" placeholder="dd/mm/yyyy">
+        </div>  
+        <br>
+        <br>
+        <div >
+            <label for="sex" style="padding-right: 50px;" >Gender: </label>
+
+            <select name="gender" id="sex" >
+                <option value="" >--select--</option>
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Prefer not to say</option>
+            </select>
+        </div>  
+        <br>
+        <br>
+
+        <div>
+            <label for="mail">Email ID: </label>
+            <input type="email" id="mail" name="mail">
+        </div>
+        <br>
+        <br>
+        <div>
+            <label for="adds">Address: </label>
+            <textarea name="adds" id="adds" cols="10" rows="5"></textarea>
+        </div>
+        <br>
+        <br>
+        <div>
+            <label for="mobile">Phone No: </label>
+            <input type="number" id="mobile" name="mobile">
+        </div>    
+        <br>
+        <br>
+        <div>
+            <label for="aadhar">Aadhar No: </label>
+            <input type="number" id="aadhar" name="aadhar">
+        </div>
+        <br>
+        <br>
+        <div class="button">
+           <div>
+            <button type="submit" class="b1"><b>Submit</b></button>
+           </div>
+           <div>
+            <button type="reset" class="b1"><b>Reset</b></button>
+           </div>
+        </div>
+    </form>
+</body>
+</html>

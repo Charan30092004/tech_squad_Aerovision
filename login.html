@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official</title>
+
+</head>
+<style>
+    body{
+        background-image: url(https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1580493890249-scaled.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        position: relative;
+        
+    }
+    .box{
+        width: 250px;
+        height: fit-content;
+        background-color: rgba(239, 239, 243,0.6);
+        padding: 20px 30px 15px;
+        position: absolute;
+        top: 25%;
+        bottom: 30%;
+        left: 40%;
+    }
+    .preview{
+        color: #555;
+        width: 100%;
+        text-align: center;
+        margin-top: 5px ;
+        height: 40px;
+    
+        letter-spacing: 8px;
+        border: 1px solid #888;
+        font-family: "monospace";
+    }
+    .preview span{
+        
+        user-select: none;
+    }
+    .fa-refresh img
+    {
+        width: 25px;
+        height: 25px;
+    }
+    #checkcaptcha
+    {
+        display: flex;
+        
+    }
+    button{
+        cursor: pointer;
+    }
+    #Captcha-form
+    {
+        width:80%;
+        padding: 8px;
+        border: 1px solid #888;
+    }
+</style>
+<body>
+
+    <div class="box">
+    <form >
+    <div>
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <br>
+    <br>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="passwrd" name="passwrd">
+    </div>
+    <br>
+
+    <br>
+    
+    <button type="submit" id="sumbitButton" style="align-items: center;text-align: center;margin-left: 100px;height: 30px;width: 80px;" onclick="get()">Submit</button>
+    </form>
+    <br>
+    <div class="captcha">
+        <label for="captcha-input">Enter Captcha</label>
+        <div class="preview"><p id="captchavalue"></p></div>
+        <div id="checkcaptcha">
+        <input type="text" id="Captcha-form" placeholder="Enter Captcha text">
+        <button class="captcha-refresh" onclick="createcaptcha()">
+        <i class="fa-refresh"><img src="data:image/jpeg;base64,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"></i>
+        </button>
+    </div>
+    <button id="checkinput" onclick="checkdata()" style="align-items: center;text-align: center;margin-left: 100px;height: 30px;width: 80px;">Check</button>
+    </div>
+</div>
+<script>
+       
+    // document.getElementById("captchavalue").innerHTML="hello";
+
+    var captcha;
+    function createcaptcha()
+    {
+        captcha="";
+        var n=Math.floor(Math.random()*(9-5))+5;
+        var chars='abcdefghijklmnopqrstuvwxyz!@#$%^&*()1234567890';
+        var charlen=chars.length;
+        result=document.getElementById("captchavalue");
+        result.innerHTML="";
+        for (var i=0;i<n;i++)
+        {
+            
+            const char=chars.charAt(Math.floor(Math.random()*charlen));
+            captcha+=char;
+            result.innerHTML+=char;
+            
+        }
+        const deg=`rotate(${Math.floor(Math.random()*10)}deg)`;
+        // console.log(deg);
+        document.getElementById("captchavalue").style.transform=deg;
+        
+        console.log(captcha);
+    }
+    createcaptcha();
+    var inputdata;
+    function checkdata()
+    {
+        inputdata=document.getElementById("Captcha-form").value;
+        if(inputdata==captcha){
+            document.getElementById("submitbutton").style.
+        }
+        
+    }
+
+</script>
+
+    
+</body>
+</html>

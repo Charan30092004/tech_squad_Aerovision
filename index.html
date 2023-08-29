@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerovision</title>
+    <script src="Script.js"></script>
+    <style>
+        body{
+        background-image: url("https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1580493890249-scaled.jpg");
+       
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-position: center center;
+        position: relative;
+        height: 100vh;     
+        }
+        #Buttons
+        {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        #main
+        {
+            width: fit-content;
+            border: 2px solid;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <div id="Buttons">
+            <button class="tabButtons" id="Home">Home</button>
+            <button class="tabButtons" id="login">SignUp</button>
+            <button class="tabButtons" id="About">About</button>
+            <button class="tabButtons" id="contact">Contact</button>
+        </div>
+        <div class="tabs" id="Hometab">
+            Develop a system for customer information management (e.g. flight history, contact data)
+        </div>
+        <div class="tabs" id="Logintab"></div>
+        <div class="tabs" id="Abouttab">22I211 -Charan<br>22I222 Harini <br>22I258 Sid <br>22I277 Shanmati</div>
+        <div class="tabs" id="contacttab"><a url="www.google.com">contact</a></div>
+    </div>
+    
+</body>
+</html>
